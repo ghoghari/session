@@ -187,23 +187,24 @@ class class1 {
         var EmailVariable = await req.session.VerifyEmail;
         sessionstore.Email = EmailVariable;
         sessionstore.save();
-        var user = await Todo.find({ Email: req.session.VerifyEmail });
-        if (user.length == 0) {
-          // var addingMensRecords = new Todo({
-          //   Username: req.session.Username,
-          //   Phone: req.session.Phone,
-          //   Email: req.session.VerifyEmail,
-          //   Coin: 0,
-          // });
-          // await addingMensRecords.save();
-          var user = {
-            Username: req.session.Username,
-            Phone: req.session.Phone,
-            Email: req.session.VerifyEmail,
-            Coin: 0,
-          };
-        }
-        res.json(user);
+        // var user = await Todo.find({ Email: req.session.VerifyEmail });
+        // if (user.length == 0) {
+        //   var addingMensRecords = new Todo({
+        //     Username: req.session.Username,
+        //     Phone: req.session.Phone,
+        //     Email: req.session.VerifyEmail,
+        //     Coin: 0,
+        //   });
+        //   await addingMensRecords.save();
+        //   var user = {
+        //     Username: req.session.Username,
+        //     Phone: req.session.Phone,
+        //     Email: req.session.VerifyEmail,
+        //     Coin: 0,
+        //   };
+        // }
+        // res.json(user);
+        res.send("Otp send");
       } else {
         return res.status(500).send({
           errors: [
