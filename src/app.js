@@ -30,13 +30,13 @@ var ejs_folder_path = path.join(__dirname, "../templates");
 app.set("view engine", "ejs");
 app.set("views", ejs_folder_path);
 
-setInterval(async () => {
-  try {
-    await class1.i();
-  } catch (error) {
-    console.error("Error occurred:", error);
-  }
-}, 2500);
+// setInterval(async () => {
+//   try {
+//     await class1.i();
+//   } catch (error) {
+//     console.error("Error occurred:", error);
+//   }
+// }, 2500);
 
 app.use("/", router);
 
