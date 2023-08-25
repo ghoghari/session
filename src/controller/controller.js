@@ -133,9 +133,9 @@ class class1 {
       // if (req.body.Username && req.body.Phone && req.body.Email) {
       if (req.body.Email) {
         var otp = between(100000, 999999);
-        var user = await Todo.find({ Email: req.body.Email });
-        if (user.length == 0) {
-          if (req.body.Username && req.body.Phone) {
+        // var user = await Todo.find({ Email: req.body.Email });
+        // if (user.length == 0) {
+        //   if (req.body.Username && req.body.Phone) {
             var sessionstore = req.session;
             sessionstore.Username = req.body.Username;
             sessionstore.Phone = req.body.Phone;
@@ -148,23 +148,23 @@ class class1 {
               `${otp}`
             );
             res.json(sessionstore);
-          } else {
-            res.json("Insufficient Data");
-          }
-        } else {
-          var sessionstore = req.session;
-          sessionstore.Username = req.body.Username;
-          sessionstore.Phone = req.body.Phone;
-          sessionstore.VerifyEmail = req.body.Email;
-          sessionstore.Otp = otp;
-          sessionstore.save();
-          sendEmail(
-            `${req.body.Email}`,
-            "Sending Email using Node.js",
-            `${otp}`
-          );
-          res.json(sessionstore);
-        }
+          // } else {
+          //   res.json("Insufficient Data");
+          // }
+        // } else {
+        //   var sessionstore = req.session;
+        //   sessionstore.Username = req.body.Username;
+        //   sessionstore.Phone = req.body.Phone;
+        //   sessionstore.VerifyEmail = req.body.Email;
+        //   sessionstore.Otp = otp;
+        //   sessionstore.save();
+        //   sendEmail(
+        //     `${req.body.Email}`,
+        //     "Sending Email using Node.js",
+        //     `${otp}`
+        //   );
+        //   res.json(sessionstore);
+        // }
       } else {
         res.json("Insufficient Data");
       }
